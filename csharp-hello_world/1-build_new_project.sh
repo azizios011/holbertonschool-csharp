@@ -12,7 +12,8 @@ dotnet new console
 # Display a success message
 echo "The template \"Console Application\" was created successfully."
 
-dotnet build
-
 # Run 'dotnet restore' to restore project dependencies
 dotnet restore
+
+# Build the project
+dotnet build
