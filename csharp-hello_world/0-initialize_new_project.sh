@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-cd 0-new_project
+mkdir 0-new_project
+
+cd 0-new_project || exit
+
 dotnet new console
-cd 0-new_project
+
 echo "The template \"Console Application\" was created successfully."
+
 dotnet restore
