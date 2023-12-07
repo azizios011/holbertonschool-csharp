@@ -1,4 +1,5 @@
 ﻿// a program that print the given variables as in the result shown.
+using System;
 using System.Globalization;
 class Program
 {
