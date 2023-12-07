@@ -1,4 +1,4 @@
-﻿// a program that print 'Holberton' word seprat it in three ways.
+﻿// a program that print 'Holberton' word seprat it in three ways. 
 using System;
 class Program
 {
