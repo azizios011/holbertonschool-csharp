@@ -1,4 +1,5 @@
-﻿﻿using System;
+﻿﻿// a program that print a string stored in the variable str 3 times, followed by its first 9 characters.
+using System;
 
 class Program
 {
