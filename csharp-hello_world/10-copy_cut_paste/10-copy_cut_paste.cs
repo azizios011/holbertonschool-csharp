@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// a program that print 'Holberton' word seprat it in three ways.
 using System;
 class Program
 {
