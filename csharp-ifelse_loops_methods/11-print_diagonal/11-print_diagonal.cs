@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that draws a diagonal line in the terminal.
+using System;
 
 class Line
 {
