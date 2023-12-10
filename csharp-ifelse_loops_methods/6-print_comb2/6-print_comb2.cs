@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a program that prints all possible different combinations of two digits.
+using System;
 
 class Program
 {
