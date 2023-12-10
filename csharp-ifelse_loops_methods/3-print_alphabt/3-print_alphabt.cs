@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a program that prints the alphabet, in lowercase, not followed by a new line, without 'q' and 'e' character using code ASCII.
+using System;
 
 class Program
 {
