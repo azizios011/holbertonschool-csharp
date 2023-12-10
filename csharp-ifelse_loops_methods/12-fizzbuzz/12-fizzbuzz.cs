@@ -1,4 +1,5 @@
-﻿using System;
+﻿//  a program that prints the numbers from 1 to 100 separated by a space.
+using System;
 
 class Program
 {
