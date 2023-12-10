@@ -14,7 +14,7 @@ class Program
         }
         else if (lastDigit < 6 && lastDigit != 0)
         {
-            Console.WriteLine(lastDigit + " and is less than 6 and not 0");
+            Console.WriteLine(-lastDigit + " and is less than 6 and not 0");
         }
         else if (lastDigit == 0)
         {
