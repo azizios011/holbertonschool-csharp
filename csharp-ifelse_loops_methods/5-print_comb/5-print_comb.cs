@@ -1,19 +1,22 @@
-﻿using System;
+﻿// a program that prints numbers from 0 to 99 separated by ', ' , followed by a space.
+using System;
 
-class Program
+namespace _5_print_comb
 {
-    static void Main(string[] args)
+    class Program
     {
-        for(int i = 0; i <= 99; i++)
+        static void Main(string[] args)
         {
-            Console.Write($"{i:D2}");
-            if (i < 99)
+            for (int i = 0; i < 100; i++)
             {
-                Console.Write(", ");
-            }
-            else
-            {
-                Console.Write("\n");
+                if (i == 99)
+                {
+                    Console.WriteLine($"{i:00}");
+                }
+                else
+                {
+                    Console.Write($"{i:00}, ");
+                }
             }
         }
     }
