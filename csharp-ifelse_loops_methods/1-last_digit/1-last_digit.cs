@@ -2,28 +2,27 @@
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Random rndm = new Random();
-        int number = rndm.Next(-10000, 10000);
+        // Do not modify this code
+        Random random = new Random();
+        int number = random.Next(int.MinValue, int.MaxValue);
+
         int lastDigit = Math.Abs(number) % 10;
+
         Console.Write("The last digit of " + number + " is ");
-        if (number < 0)
-        {
-            lastDigit = -lastDigit;
-        }
 
         if (lastDigit > 5)
         {
-            Console.WriteLine("The last digit of " + number + " is " + lastDigit + " and is greater than 5");
-        }
-        else if (lastDigit < 6 && lastDigit != 0)
-        {
-            Console.WriteLine("The last digit of " + number + " is " + lastDigit + " and is less than 6 and not 0");
+            Console.WriteLine(lastDigit + " and is greater than 5");
         }
         else if (lastDigit == 0)
         {
-            Console.WriteLine("The last digit of " + number + " is " + lastDigit + " and is 0");
+            Console.WriteLine(lastDigit + " and is 0");
+        }
+        else
+        {
+            Console.WriteLine(lastDigit + " and is less than 6 and not 0");
         }
     }
 }
