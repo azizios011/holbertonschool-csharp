@@ -18,7 +18,7 @@ class Array
             Console.Write(i + " ");
         }
 
-        Console.WriteLine(); // Move to the next line after printing the array
+        Console.WriteLine();
         return newArray;
     }
 }
