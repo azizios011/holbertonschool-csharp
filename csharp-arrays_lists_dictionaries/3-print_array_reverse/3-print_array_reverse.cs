@@ -1,5 +1,5 @@
 ﻿// a method that prints all integers of an array, in reverse order.
-sing System;
+using System;
 
 class Array
 {
@@ -7,15 +7,18 @@ class Array
     {
         if (array == null)
         {
-            Console.WriteLine("Array is null");
+            Console.WriteLine();
             return;
         }
-
-        for (int i = array.Length - 1; i >= 0; i--)
+        if (array.Length > 0)
         {
-            Console.Write(array[i]);
-            if (i > 0)
-                Console.Write(" ");
+            for (int i = array.Length - 1; i > -1; i--)
+            {
+                if (i != 0)
+                    Console.Write($"{array[i]} ");
+                else
+                    Console.WriteLine($"{array[i]}");
+            }
         }
         else
         {
