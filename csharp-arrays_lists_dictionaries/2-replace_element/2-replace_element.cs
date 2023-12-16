@@ -7,7 +7,7 @@ class Array
     {
         if (index < 0 || index > array.Length - 1)
         {
-            Console.WriteLine("index out of range");
+            Console.WriteLine("Index out of range");
             return array;
         }
         else
