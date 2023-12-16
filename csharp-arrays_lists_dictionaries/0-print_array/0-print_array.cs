@@ -1,6 +1,6 @@
 ﻿using System;
 
-class Array
+public class Array
 {
     public static int[] CreatePrint(int size)
     {
@@ -9,16 +9,21 @@ class Array
             Console.WriteLine("Size cannot be negative");
             return null;
         }
-
-        int[] newArray = new int[size];
-
-        for (int i = 0; i < size; i++)
+        else if (size == 0)
         {
-            newArray[i] = i;
-            Console.Write(i + " ");
+            Console.WriteLine();
+            return new int[0];
         }
+        else
+        {
+            int[] newArray = new int[size];
+            for (int i = 0; i < size; i++)
+            {
+                newArray[i] = i;
+            }
 
-        Console.WriteLine();
-        return newArray;
+            Console.WriteLine(string.Join(" ", newArray));
+            return newArray;
+        }
     }
 }
