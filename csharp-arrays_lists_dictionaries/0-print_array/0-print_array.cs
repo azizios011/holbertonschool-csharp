@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that creates and prints an array of integers of a given size.
+using System;
 
 public class Array
 {
