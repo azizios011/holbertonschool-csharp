@@ -17,6 +17,9 @@ class Array
             if (i > 0)
                 Console.Write(" ");
         }
-        Console.WriteLine();
+        else
+        {
+            Console.WriteLine();
+        }
     }
 }
