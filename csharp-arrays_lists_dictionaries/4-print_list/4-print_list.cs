@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that creates and prints a list of integers of a given size.
+using System;
 using System.Collections.Generic;
 
 class List
