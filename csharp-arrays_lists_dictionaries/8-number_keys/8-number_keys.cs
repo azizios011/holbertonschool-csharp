@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that returns the number of keys in a dictionary.
+using System;
 using System.Collections.Generic;
 
 class Dictionary
