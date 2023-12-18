@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that returns a new dictionary with all values multiplied by 2.
+using System;
 using System.Collections.Generic;
 
 class Dictionary
