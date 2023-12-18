@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that deletes a key in a dictionary.
+using System;
 using System.Collections.Generic;
 
 class Dictionary
