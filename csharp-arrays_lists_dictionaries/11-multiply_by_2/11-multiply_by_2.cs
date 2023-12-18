@@ -10,10 +10,12 @@ class Dictionary
             Console.WriteLine("Dictionary is null");
             return null;
         }
-        foreach (var kvp in myDict)
+        Dictionary<string, int> newDict = new Dictionary<string, int>();
+
+        foreach (var entry in myDict)
         {
-            myDict[kvp.Key] = kvp.Value * 2;
+            newDict.Add(entry.Key, entry.Value * 2);
         }
-        return myDict;
+        return newDict;
     }
 }
