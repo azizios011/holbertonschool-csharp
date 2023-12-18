@@ -11,6 +11,7 @@ class Dictionary
             Console.WriteLine("Dictionary is null");
             return null;
         }
+
         Dictionary<string, int> newDict = new Dictionary<string, int>();
 
         foreach (var entry in myDict)
