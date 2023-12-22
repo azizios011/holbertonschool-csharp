@@ -3,24 +3,30 @@ using System;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        int[,] array = new int[5, 5];
-
-        array[2, 2] = 1;
-
-        Print2DArray(array);
-    }
-
-    static void Print2DArray(int[,] array)
-    {
-        for (int i = 0; i < array.GetLength(0); i++)
+        int[,] array = new int [5,5];
+        int i;
+        int j;
+        for (i = 0; i < 5 ;i++)
         {
-            for (int j = 0; j < array.GetLength(1); j++)
+            for (j = 0; j < 5; j++)
             {
-                Console.Write(array[i, j] + " ");
+                if (i == 2 && j == 2)
+                {
+                    array[i , j] = 1;
+                    Console.Write("{0} ", array[i, j]);
+                }
+                else if (j==4)
+                {
+                    Console.Write("{0}",array[i, j]);
+                }
+                else
+                {
+                    Console.Write("{0} ", array[i,j]);
+                }
             }
-            Console.WriteLine();
+            Console.Write("\n");
         }
     }
 }
