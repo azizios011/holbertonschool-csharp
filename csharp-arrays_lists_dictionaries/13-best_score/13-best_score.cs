@@ -5,31 +5,17 @@ using System.Collections.Generic;
 class Dictionary
 {
     public static string BestScore(Dictionary<string, int> myList)
-    {
-        if (myList == null)
+    {   
+        string best_student = "None";
+        int max_score = int.MinValue;
+        foreach(KeyValuePair<string, int> element in myList)
         {
-            Console.WriteLine("Dictionary is null");
-            return "None";
-        }
-
-        if (myList.Count == 0)
-        {
-            Console.WriteLine("Dictionary is empty");
-            return "None";
-        }
-
-        int maxScore = int.MinValue;
-        string bestStudent = "None";
-
-        foreach (var kvp in myList)
-        {
-            if (kvp.Value > maxScore)
+            if (element.Value > max_score)
             {
-                maxScore = kvp.Value;
-                bestStudent = kvp.Key;
+                best_student = element.Key;
+                max_score = element.Value;
             }
-        }
-
-        return bestStudent;
+        } 
+        return best_student;
     }
 }
