@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that computes the square value of all integers of a matrix.
+using System;
 
 class Matrix
 {
