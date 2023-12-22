@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a program that creates and prints a jagged array containing 3 arrays.
+using System;
 
 class Program
 {
