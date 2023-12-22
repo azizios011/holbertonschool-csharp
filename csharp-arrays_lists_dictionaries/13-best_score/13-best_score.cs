@@ -6,9 +6,15 @@ class Dictionary
 {
     public static string BestScore(Dictionary<string, int> myList)
     {
-        if (myList == null || myList.Count == 0)
+        if (myList == null)
         {
-            Console.WriteLine("Dictionary is null or empty");
+            Console.WriteLine("Dictionary is null");
+            return "None";
+        }
+
+        if (myList.Count == 0)
+        {
+            Console.WriteLine("Dictionary is empty");
             return "None";
         }
 
