@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that adds all unique integers in a list.
+using System;
 using System.Collections.Generic;
 
 class List
