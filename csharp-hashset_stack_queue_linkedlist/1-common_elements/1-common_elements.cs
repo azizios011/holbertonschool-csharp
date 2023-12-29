@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that returns a sorted list of common elements in two lists.
+using System;
 using System.Collections.Generic;
 
 class List
