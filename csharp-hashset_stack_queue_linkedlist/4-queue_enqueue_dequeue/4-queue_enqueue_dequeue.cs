@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that peek, enqueue, dequeue a queue.
+using System;
 using System.Collections.Generic;
 
 class MyQueue
