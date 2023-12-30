@@ -20,17 +20,27 @@ class MyStack
             if (containsSearch)
             {
                 Stack<string> tempStack = new Stack<string>();
-                while (aStack.Count > 0 && aStack.Peek() != search)
+                bool found = false;
+
+                while (aStack.Count > 0)
                 {
-                    tempStack.Push(aStack.Pop());
+                    string currentItem = aStack.Pop();
+                    if (currentItem == search)
+                    {
+                        found = true;
+                        break;
+                    }
+                    tempStack.Push(currentItem);
                 }
-                if (aStack.Count > 0)
-                {
-                    aStack.Pop();
-                }
+
                 while (tempStack.Count > 0)
                 {
                     aStack.Push(tempStack.Pop());
+                }
+
+                if (found)
+                {
+                    aStack.Pop();
                 }
             }
         }
