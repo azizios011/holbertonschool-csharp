@@ -12,12 +12,12 @@ class LList
             return;
         }
 
-        LinkedListNode<int> currentNode = myLList.First;
+        LinkedListNode<int> current = myLList.First;
         for (int i = 0; i < index; i++)
         {
-            currentNode = currentNode.Next;
+            current = current.Next;
         }
 
-        myLList.Remove(currentNode);
+        myLList.Remove(current);
     }
 }
