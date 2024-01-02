@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that finds a value in a LinkedList and returns its index position in the list.
+using System;
 using System.Collections.Generic;
 
 class LList
