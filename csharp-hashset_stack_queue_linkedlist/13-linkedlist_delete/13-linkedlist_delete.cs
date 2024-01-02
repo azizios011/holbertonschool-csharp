@@ -6,18 +6,15 @@ class LList
 {
     public static void Delete(LinkedList<int> myLList, int index)
     {
-        if (index < 0 || index >= myLList.Count)
+        int idx = 0;
+        foreach(var elem in myLList)
         {
-            Console.WriteLine("Invalid index");
-            return;
+            if(idx == index)
+            {
+                myLList.Remove(elem);
+                return;
+            }
+            idx++;
         }
-
-        LinkedListNode<int> current = myLList.First;
-        for (int i = 0; i < index; i++)
-        {
-            current = current.Next;
-        }
-
-        myLList.Remove(current);
     }
 }
