@@ -15,7 +15,7 @@ class LList
         LinkedListNode<int> currentNode = myLList.First;
         for (int i = 0; i < index; i++)
         {
-            currentNode =currentNode.Next;
+            currentNode = currentNode.Next;
         }
 
         myLList.Remove(currentNode);
