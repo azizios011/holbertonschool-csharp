@@ -18,7 +18,6 @@ class List
 
         catch (ArgumentOutOfRangeException)
         {
-            Console.WriteLine("Warning: Attempted to print more elements than available in the list.");
             return myList.Count;
         }
     }
