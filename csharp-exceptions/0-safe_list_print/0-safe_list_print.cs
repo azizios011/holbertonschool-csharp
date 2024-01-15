@@ -1,4 +1,5 @@
-﻿using System;
+﻿// a method that prints n elements of a list.
+using System;
 using System.Collections.Generic;
 
 class List
