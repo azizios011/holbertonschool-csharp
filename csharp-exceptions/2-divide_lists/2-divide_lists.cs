@@ -11,7 +11,8 @@ class List
         {
             for (int i = 0; i < listLength; i++)
             {
-                
+                try
+                {
                     int element1 = list1[i];
                     int element2 = list2[i];
 
@@ -26,6 +27,12 @@ class List
                         int divisionResult = element1 / element2;
                         result.Add(divisionResult);
                     }
+                }
+                
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("Out of range");
+                }
             }
         }
 
