@@ -1,6 +1,5 @@
 ﻿// a function that divides 2 integers and prints the result.
 using System;
-using System.Collections.Generic;
 
 class Int
 {
