@@ -1,8 +1,15 @@
-﻿// a new namespace 'Enemies' and  an empty public class 'Zombie'.
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
-namespace Enemies;
-class Zombie
+/// <summary>
+/// a new namespace 'Enemies'
+/// </summary>
+namespace Enemies
 {
+    /// <summary>
+    /// an empty public class 'Zombie'.
+    /// </summary>
+    public class Zombie
+    {
     
+    }
 }
