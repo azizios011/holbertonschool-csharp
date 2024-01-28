@@ -24,8 +24,8 @@ namespace Enemies
         /// <summary>
         /// Initializes a new instance of the <see cref="Zombie"/> class with the specified health value.
         /// </summary>
-        /// <param name="value"> The initial health value. Must be greater than or equal to 0. </param>
-        /// <exception cref="ArgumentException">Thrown when the provided health value is less than 0    </exception>
+        /// <param name="value">The initial health value. Must be greater than or equal to 0.</param>
+        /// <exception cref="ArgumentException">Thrown when the provided health value is less than 0</exception>
         public Zombie(int value)
         {
             if (value > 0)
