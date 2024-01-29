@@ -13,7 +13,7 @@ namespace Enemies
         public int health { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cerf="Zombie"/> class.
+        /// Initializes a new instance of the <see cref="Zombie"/> class.
         /// </summary>
         public Zombie()
         {
@@ -28,10 +28,13 @@ namespace Enemies
         /// <exception cref="ArgumentException">Thrown when the provided health value is less than 0</exception>
         public Zombie(int value)
         {
-            if (value > 0)
+            if (value < 0)
             {
                 throw new ArgumentException("Health must be greater than or equal to 0");
             }
+
+            // Set the health value in the constructor.
+            health = value;
         }
     }
 }
