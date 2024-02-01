@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace Enemies
 {
@@ -8,7 +9,7 @@ namespace Enemies
     public class Zombie
     {
         /// <summary>
-        /// Get or sets the health of the Zombie.
+        /// Gets or sets the health of the Zombie.
         /// </summary>
         public int health { get; set; }
 
@@ -17,15 +18,13 @@ namespace Enemies
         /// </summary>
         public Zombie()
         {
-            // Set the intial value of health to 0 in the constructor.
+            // Set the initial value of health to 0 in the constructor.
             health = 0;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Zombie"/> class with the specified health value.
         /// </summary>
-        /// <param name="value">The initial health value. Must be greater than or equal to 0.</param>
-        /// <exception cref="ArgumentException">Thrown when the provided health value is less than 0</exception>
         public Zombie(int value)
         {
             if (value < 0)
