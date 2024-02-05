@@ -8,6 +8,6 @@ class Obj
     /// </summary>
     public static bool IsInstanceOfArray(object obj)
     {
-        return obj.GetType().IsInstanceOfType(typeof(Array));
+        return obj.GetType().IsArray;
     }
 }
