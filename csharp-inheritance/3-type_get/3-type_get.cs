@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Reflection;
 
+/// <summary>
+/// a represention of class "Obj".
+/// </summary>
 class Obj
 {
     /// <summary>
