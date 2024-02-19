@@ -16,13 +16,13 @@ class Obj
         Console.WriteLine($"{typeInfo.Name} Properties:");
         foreach (PropertyInfo property in typeInfo.GetProperties())
         {
-            Console.WriteLine($"- {property.Name}");
+            Console.WriteLine($"{property.Name}");
         }
 
         Console.WriteLine($"{typeInfo.Name} Methods:");
         foreach (MethodInfo method in typeInfo.GetMethods())
         {
-            Console.WriteLine($"- {method.Name}");
+            Console.WriteLine($"{method.Name}");
         }
     }
 }
