@@ -1,7 +1,7 @@
 ﻿using System;
 
 /// <summary>
-/// abstract class named VectorMath.
+/// abstract class named VectorMath. 
 /// </summary>
 class VectorMath
 {
@@ -27,17 +27,4 @@ class VectorMath
         return magnitude;
     }
 
-    /// <summary>
-    /// a test method for testing the previous method.
-    /// </summary>
-    public static void Main(string[] args)
-    {
-        double[] vector2D = { 3, 4 };
-        double[] vector3D = { 7, -3, -9 };
-        double[] invalidVector = { 1, 2, 3, 4 };
-
-        Console.WriteLine("Magnitude of vector2D: " + Magnitude(vector2D));
-        Console.WriteLine("Magnitude of vector3D: " + Magnitude(vector3D));
-        Console.WriteLine("Magnitude of invalidVector: " + Magnitude(invalidVector));
-    }
 }
