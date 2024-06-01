@@ -1,36 +1,36 @@
-﻿using Systm;
+﻿using System;
 
-public class MatrixMath
+namespace MatrixMath
 {
-    /// <summary>
-    /// Adds two matrices and returns the resulting matrix.
-    /// The matrices can be either both 2D (2x2) or both 3D (3x3).
-    /// If the matrices are not the same size or not 2D or 3D, a matrix containing -1 is returned.
-    /// </summary>
-    public static double[,] Add(double[,] matrix1, double[,] matrix2)
+    public class MatrixMath
     {
-        // Check if both matrices are either 2D or 3D and have the same dimensions
-        if ((matrix1.GetLength(0) == 2 && matrix1.GetLength(1) == 2 && matrix2.GetLength(0) == 2 && matrix2.GetLength(1) == 2) ||
-            (matrix1.GetLength(0) == 3 && matrix1.GetLength(1) == 3 && matrix2.GetLength(0) == 3 && matrix2.GetLength(1) == 3))
+        public static double[,] Add(double[,] matrix1, double[,] matrix2)
         {
-            int rows = matrix1.GetLength(0);
-            int cols = matrix1.GetLength(1);
-            double[,] result = new double[rows, cols];
+            int rows1 = matrix1.GetLength(0);
+            int cols1 = matrix1.GetLength(1);
+            int rows2 = matrix2.GetLength(0);
+            int cols2 = matrix2.GetLength(1);
 
-            // Add corresponding elements of both matrices
-            for (int i = 0; i < rows; i++)
+            // Check if both matrices are either 2x2 or 3x3 and of the same size
+            if ((rows1 != 2 && rows1 != 3) || (cols1 != 2 && cols1 != 3) ||
+                (rows1 != rows2) || (cols1 != cols2))
             {
-                for (int j = 0; j < cols; j++)
+                return new double[,] { { -1 } };
+            }
+
+            // Initialize the resulting matrix
+            double[,] result = new double[rows1, cols1];
+
+            // Add the corresponding elements of the two matrices
+            for (int i = 0; i < rows1; i++)
+            {
+                for (int j = 0; j < cols1; j++)
                 {
                     result[i, j] = matrix1[i, j] + matrix2[i, j];
                 }
             }
+
             return result;
-        }
-        else
-        {
-            // Return a matrix containing -1 if validation fails
-            return new double[,] { { -1 } };
         }
     }
 }
