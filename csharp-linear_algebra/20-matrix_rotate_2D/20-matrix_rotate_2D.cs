@@ -1,21 +1,42 @@
-﻿﻿﻿using System;
+﻿﻿using System;
 
-///<summary>Class matrixmath</summary>
-class MatrixMath
+namespace MatrixMath
 {
-	///<summary>matrix rotation</summary>
-	///<return>transformedPoint</return>
-	public static double[,] Rotate2D(double[,] matrix, double angle)
-	{
-		if (matrix.GetLength(1) > 2)
-			return new double[,] { { -1 } };
-		double[,] rotationMatrix = {{Math.Cos(angle), Math.Sin(angle)}, {-1 * Math.Sin(angle), Math.Cos(angle)}};
-		double[,] transformedPoint = new double[2, 2];
+    public class MatrixMath
+    {
+        /// <summary>
+        /// Rotates a square 2D matrix by a given angle in radians.
+        /// </summary>
+        public static double[,] Rotate2D(double[,] matrix, double angle)
+        {
+            int n = matrix.GetLength(0);
 
-		for (int i = 0; i < 2; i++)
-			for (int j = 0; j < 2; j++)
-				for (int k = 0; k < 2; k++)
-					transformedPoint[i, j] = Math.Round(transformedPoint[i, j] + (matrix[i, k] * rotationMatrix[k, j]), 2);
-		return transformedPoint;
-	}
+            // Check if the matrix is square
+            if (n != matrix.GetLength(1))
+            {
+                return new double[,] { { -1 } };
+            }
+
+            double cosTheta = Math.Cos(angle);
+            double sinTheta = Math.Sin(angle);
+            double[,] result = new double[n, n];
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    // Apply rotation to the value at matrix[i, j]
+                    double x = i;
+                    double y = j;
+                    double newX = x * cosTheta - y * sinTheta;
+                    double newY = x * sinTheta + y * cosTheta;
+
+                    // Assign the rotated value to the corresponding position in the result matrix
+                    result[i, j] = matrix[i, j] * (cosTheta + sinTheta);
+                }
+            }
+
+            return result;
+        }
+    }
 }
