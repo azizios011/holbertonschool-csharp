@@ -3,6 +3,9 @@ using MyMath;
 
 namespace MyMath.Tests
 {
+    /// <summary>
+    /// a test method that tests the adds method.
+    /// </summary>
     [TestFixture]
     public class OperationsTests
     {
