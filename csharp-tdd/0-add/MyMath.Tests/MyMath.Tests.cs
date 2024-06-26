@@ -1,21 +1,33 @@
-using System;
-using System.ComponentModel;
-namespace MyMath.Tests {
+using NUnit.Framework;
+using MyMath;
 
-    /// <summary>
-    /// A test implementation of a class.
-    /// </summary>
-    public class Tests
+namespace MyMath.Tests
+{
+    [TestFixture]
+    public class OperationsTests
     {
-        private Operations _Sum = new Operations();
-        /// <summary>
-        /// a test method.
-        /// </summary>
         [Test]
-       public void TestSum()
-       {
-        int result = Operations.Add(2, 2);
-        Assert.That(result, Is.EqualTo(4));
-       }
+        public void Add_PositiveNumbers_ReturnsCorrectSum()
+        {
+            Assert.AreEqual(5, Operations.Add(2, 3));
+        }
+
+        [Test]
+        public void Add_NegativeNumbers_ReturnsCorrectSum()
+        {
+            Assert.AreEqual(-5, Operations.Add(-2, -3));
+        }
+
+        [Test]
+        public void Add_PositiveAndNegativeNumber_ReturnsCorrectSum()
+        {
+            Assert.AreEqual(1, Operations.Add(3, -2));
+        }
+
+        [Test]
+        public void Add_Zero_ReturnsCorrectSum()
+        {
+            Assert.AreEqual(0, Operations.Add(0, 0));
+        }
     }
 }
