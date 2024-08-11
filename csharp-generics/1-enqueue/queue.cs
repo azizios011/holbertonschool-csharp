@@ -1,7 +1,5 @@
 ﻿using System;
 
-
-
     /// <summary>
     /// Represents a generic queue data structure.
     /// </summary>
