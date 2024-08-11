@@ -14,6 +14,6 @@
         public string CheckType()
         {
             // Returns the type of the generic parameter T
-            return typeof(T).FullName;
+            return typeof(T).Name;
         }
     }
