@@ -1,7 +1,7 @@
 ﻿using System;
 
-namespace CustomQueue
-{
+
+
     /// <summary>
     /// Represents a generic queue data structure.
     /// </summary>
@@ -103,4 +103,3 @@ namespace CustomQueue
             return count;
         }
     }
-}
