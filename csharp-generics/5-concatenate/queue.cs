@@ -2,10 +2,10 @@
 using System.Text;
 
 /// <summary>
-/// Generic Queue class.
+/// A generic queue class implementation.
 /// </summary>
-/// <typeparam name="T">Type of elements in the queue.</typeparam>
-public class Queue<T>
+/// <typeparam name="T">The type of elements in the queue.</typeparam>
+class Queue<T>
 {
     /// <summary>
     /// Node class representing each element in the queue.
@@ -13,65 +13,54 @@ public class Queue<T>
     public class Node
     {
         /// <summary>
-        /// Value stored in the node.
+        /// The value stored in the node.
         /// </summary>
-        public T Value { get; set; }
+        public T value;
 
         /// <summary>
-        /// Reference to the next node.
+        /// Pointer to the next node in the queue.
         /// </summary>
-        public Node Next { get; set; }
+        public Node next;
 
         /// <summary>
-        /// Constructor to create a new node with a specified value.
+        /// Initializes a new node with the specified value.
         /// </summary>
-        /// <param name="value">Value to store in the node.</param>
+        /// <param name="value">The value to store in the node.</param>
         public Node(T value)
         {
-            Value = value;
-            Next = null;
+            this.value = value;
+            this.next = null;
         }
     }
 
-    /// <summary>
-    /// Reference to the head of the queue.
-    /// </summary>
+    // Queue properties
     private Node head;
-
-    /// <summary>
-    /// Reference to the tail of the queue.
-    /// </summary>
     private Node tail;
-
-    /// <summary>
-    /// Number of nodes in the queue.
-    /// </summary>
     private int count;
 
     /// <summary>
-    /// Method to enqueue a new value to the queue.
+    /// Adds a new element to the end of the queue.
     /// </summary>
-    /// <param name="value">Value to enqueue.</param>
+    /// <param name="value">The value to add to the queue.</param>
     public void Enqueue(T value)
     {
         Node newNode = new Node(value);
         if (head == null)
         {
-            head = newNode;
-            tail = newNode;
+            head = tail = newNode;
         }
         else
         {
-            tail.Next = newNode;
+            tail.next = newNode;
             tail = newNode;
         }
         count++;
     }
 
     /// <summary>
-    /// Method to dequeue the first value from the queue.
+    /// Removes and returns the element at the front of the queue.
     /// </summary>
-    /// <returns>The value dequeued from the queue.</returns>
+    /// <returns>The value of the removed element, or the default value if the queue is empty.</returns>
     public T Dequeue()
     {
         if (head == null)
@@ -79,17 +68,16 @@ public class Queue<T>
             Console.WriteLine("Queue is empty");
             return default(T);
         }
-
-        T value = head.Value;
-        head = head.Next;
+        T value = head.value;
+        head = head.next;
         count--;
         return value;
     }
 
     /// <summary>
-    /// Method to peek at the first value in the queue without dequeuing it.
+    /// Returns the value of the element at the front of the queue without removing it.
     /// </summary>
-    /// <returns>The first value in the queue.</returns>
+    /// <returns>The value of the first element, or the default value if the queue is empty.</returns>
     public T Peek()
     {
         if (head == null)
@@ -97,11 +85,11 @@ public class Queue<T>
             Console.WriteLine("Queue is empty");
             return default(T);
         }
-        return head.Value;
+        return head.value;
     }
 
     /// <summary>
-    /// Method to print all values in the queue starting from the head.
+    /// Prints all the elements in the queue, starting from the head.
     /// </summary>
     public void Print()
     {
@@ -114,15 +102,15 @@ public class Queue<T>
         Node current = head;
         while (current != null)
         {
-            Console.WriteLine(current.Value);
-            current = current.Next;
+            Console.WriteLine(current.value);
+            current = current.next;
         }
     }
 
     /// <summary>
-    /// Method to concatenate all values in the queue if the queue is of type string or char.
+    /// Concatenates all the values in the queue if the queue is of type string or char.
     /// </summary>
-    /// <returns>Concatenated string of all values in the queue.</returns>
+    /// <returns>A concatenated string of all values, or null if the queue is empty or not of type string/char.</returns>
     public string Concatenate()
     {
         if (head == null)
@@ -131,37 +119,54 @@ public class Queue<T>
             return null;
         }
 
-        if (typeof(T) != typeof(string) && typeof(T) != typeof(char))
+        if (CheckType() == typeof(string))
         {
-            Console.WriteLine("Concatenate is for a queue of Strings or Chars only");
+            StringBuilder sb = new StringBuilder();
+            Node current = head;
+            while (current != null)
+            {
+                sb.Append(current.value);
+                if (current.next != null)
+                {
+                    sb.Append(" ");
+                }
+                current = current.next;
+            }
+            return sb.ToString();
+        }
+        else if (CheckType() == typeof(char))
+        {
+            StringBuilder sb = new StringBuilder();
+            Node current = head;
+            while (current != null)
+            {
+                sb.Append(current.value);
+                current = current.next;
+            }
+            return sb.ToString();
+        }
+        else
+        {
+            Console.WriteLine("Concatenate is for a queue of Strings or Chars only.");
             return null;
         }
-
-        StringBuilder result = new StringBuilder();
-        Node current = head;
-
-        while (current != null)
-        {
-            result.Append(current.Value);
-            
-            // Add a space if T is string and it's not the last element
-            if (typeof(T) == typeof(string) && current.Next != null)
-            {
-                result.Append(" ");
-            }
-            
-            current = current.Next;
-        }
-
-        return result.ToString();
     }
 
     /// <summary>
-    /// Method to return the count of nodes in the queue.
+    /// Returns the number of elements in the queue.
     /// </summary>
-    /// <returns>Number of nodes in the queue.</returns>
+    /// <returns>The count of elements in the queue.</returns>
     public int Count()
     {
         return count;
+    }
+
+    /// <summary>
+    /// Checks and returns the type of the queue's elements.
+    /// </summary>
+    /// <returns>The type of the elements in the queue.</returns>
+    public Type CheckType()
+    {
+        return typeof(T);
     }
 }
