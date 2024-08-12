@@ -1,83 +1,84 @@
 ﻿using System;
-
+using System.Collections.Generic;
 /// <summary>
-/// An abstract class called 'Base' containing the following.
-/// </summary>
-public abstract class Base
-{
-    /// <summary>
-    /// Public property 'name'.
-    /// </summary>
-    public string name { get; set; }
-
-    /// <summary>
-    /// Override 'ToString()' method to return the following.
-    /// </summary>
-    public override string ToString()
-    {
-        return $"{name} is a {this.GetType().Name}";
-    }
-}
-
-/// <summary>
-/// An interface called IInteractive.
+/// IInteractive: Interface
 /// </summary>
 public interface IInteractive
 {
     /// <summary>
-    /// Method void Interact()
+    /// Interact(): method
     /// </summary>
     void Interact();
 }
 
 /// <summary>
-/// An interface called IBreakable
+/// IBreakable: Interface
 /// </summary>
 public interface IBreakable
 {
     /// <summary>
-    /// durability should be an int.
+    /// durability: property
     /// </summary>
     int durability { get; set; }
-
     /// <summary>
-    /// method void Break().
+    /// Break(): method
     /// </summary>
     void Break();
 }
 
 /// <summary>
-/// An interface called ICollectable.
+/// ICollectable: intefrace
 /// </summary>
 public interface ICollectable
 {
     /// <summary>
-    /// isCollected should be a bool/
+    /// isCollected: property
     /// </summary>
     bool isCollected { get; set; }
 
     /// <summary>
-    /// Method void Collect()
+    /// Collect(): method
     /// </summary>
     void Collect();
 }
 
 /// <summary>
-/// A class called Door that inherits from 'Base' and 'IInteractive'.
+/// Base: Class
+/// </summary>
+public abstract class Base
+{
+    /// <summary>
+    /// name property: string
+    /// </summary>
+    public string name { get; set; }
+
+    /// <summary>
+    /// Override string
+    /// </summary>
+    /// <returns>formated string</returns>
+    public override string ToString()
+    {
+        return $"{name} is a {GetType()}";
+    }
+}
+
+/// <summary>
+/// Door: class that inherits from the "Base" class and the previous "Interactive" interfaces
 /// </summary>
 public class Door : Base, IInteractive
 {
     /// <summary>
-    /// A constructor that sets the value of name.
+    /// Constructor
     /// </summary>
-    public Door(string name = "Door")
+    /// <param name="doorName">Default name of the door</param>
+    public Door(string doorName = "Door")
     {
-        // if 'name' isn’t provided, the default value should be Door.
-        this.name = name;
+        name = doorName;
     }
 
+
     /// <summary>
-    /// implement Interact() so that it prints.
+    /// Implement the method of the "Interact" interface
     /// </summary>
     public void Interact()
     {
@@ -85,94 +86,77 @@ public class Door : Base, IInteractive
     }
 }
 
-/// <summary>
-/// A class called Decoration that inherits from 'Base', 'IInteractive', and 'IBreakable'.
-/// </summary>
+/// <summary> decoration class </summary>
 public class Decoration : Base, IInteractive, IBreakable
 {
-    /// <summary>
-    /// A public bool isQuestItem.
-    /// </summary>
-    public bool isQuestItem { get; set; }
+    /// <summary> field </summary>
+    public int _durability;
 
-    /// <summary>
-    /// A public bool durability.
-    /// </summary>
-    public int durability { get; set; }
-
-    /// <summary>
-    /// A constructor that sets the value of name, durability, and isQuestItem.
-    /// </summary>
+    /// <summary> constructor </summary>
+    /// <param name="name"> </param>
+    /// <param name="durability"> </param>
+    /// <param name="isQuestItem"> </param>
     public Decoration(string name = "Decoration", int durability = 1, bool isQuestItem = false)
     {
-        if (durability <= 0)
-        {
-            throw new Exception("Durability must be greater than 0");
-        }
+        if (durability < 0)
+            throw new System.Exception("Durability must be greater than 0");
+
         this.name = name;
         this.durability = durability;
         this.isQuestItem = isQuestItem;
     }
 
-    /// <summary>
-    /// implement Interact().
-    /// </summary>
-    public void Interact()
+    /// <summary> durability </summary>
+    public int durability
     {
-
-        if (durability <= 0)
+        get { return _durability; }
+        set
         {
-            Console.WriteLine($"The {name} has been broken.");
-        }
-
-        else if (isQuestItem)
-        {
-            Console.WriteLine($"You look at the {name}. There's a key inside.");
-        }
-
-        else
-        {
-            Console.WriteLine($"You look at the {name}. Not much to see here.");
+            _durability = value;
         }
     }
 
-    /// <summary>
-    /// implement Break() so that it decrements durability by 1.
-    /// </summary>
+    /// <summary> isQuestItem </summary>
+    public bool isQuestItem { get; set; }
+
+    /// <summary> inteact methode </summary>
+    public void Interact()
+    {
+        if (durability <= 0)
+            System.Console.WriteLine($"The {name} has been broken.");
+        else
+        {
+            if (isQuestItem)
+                System.Console.WriteLine($"You look at the {name}. There's a key inside.");
+            else
+                System.Console.WriteLine($"You look at the {name}. Not much to see here.");
+        }
+    }
+
+    /// <summary> break methode </summary>
     public void Break()
     {
         durability--;
-
         if (durability > 0)
-        {
-            Console.WriteLine($"You hit the {name}. It cracks.");
-        }
-
-        else if (durability == 0)
-        {
-            Console.WriteLine($"You smash the {name}. What a mess.");
-        }
-
-        else
-        {
-            Console.WriteLine($"The {name} is already broken.");
-        }
+            System.Console.WriteLine($"You hit the {name}. It cracks.");
+        if (durability == 0)
+            System.Console.WriteLine($"You smash the {name}. What a mess.");
+        if (durability < 0)
+            System.Console.WriteLine($"The {name} is already broken.");
     }
 }
 
+
 /// <summary>
-/// A class called Key that inherits from 'Base' and 'ICollectable'.
+/// Class that inherits from the Base class and the ICollectable Interface
 /// </summary>
 public class Key : Base, ICollectable
 {
     /// <summary>
-    /// The method declaration should use name and isCollected as the parameter names.
+    /// Constructor
     /// </summary>
-    public bool isCollected { get; set; }
-
-    /// <summary>
-    /// A constructor that sets the value of name and isCollected.
-    /// </summary>
+    /// <param name="name">string</param>
+    /// <param name="isCollected">boolean</param>
     public Key(string name = "Key", bool isCollected = false)
     {
         this.name = name;
@@ -180,11 +164,16 @@ public class Key : Base, ICollectable
     }
 
     /// <summary>
-    /// implement Collect().
+    /// isCollected: boolean parameter
+    /// </summary>
+    public bool isCollected { get; set; }
+
+    /// <summary>
+    /// Implement Collect()
     /// </summary>
     public void Collect()
     {
-        if (!isCollected)
+        if (isCollected == false)
         {
             isCollected = true;
             Console.WriteLine($"You pick up the {name}.");
@@ -198,29 +187,25 @@ public class Key : Base, ICollectable
 
 
 /// <summary>
-/// A class called RoomObjects.
+/// Class
 /// </summary>
 public class RoomObjects
 {
     /// <summary>
-    /// A method called IterateAction. This method should take a list of all objects.
+    /// method that takes a list of all objects, iterates through it, and executes methods depending on what interface that item implements. 
     /// </summary>
+    /// <param name="roomObjects"></param>
+    /// <param name="type"></param>
     public static void IterateAction(List<Base> roomObjects, Type type)
     {
-        foreach (Base obj in roomObjects)
+        foreach (var obj in roomObjects)
         {
-            if (type == typeof(IInteractive) && obj is IInteractive interactive)
-            {
-                interactive.Interact();
-            }
-            else if (type == typeof(IBreakable) && obj is IBreakable breakable)
-            {
-                breakable.Break();
-            }
-            else if (type == typeof(ICollectable) && obj is ICollectable collectable)
-            {
-                collectable.Collect();
-            }
+            if (obj is IInteractive && type == typeof(IInteractive))
+                (obj as IInteractive).Interact();
+            if (obj is IBreakable && type == typeof(IBreakable))
+                (obj as IBreakable).Break();
+            if (obj is ICollectable && type == typeof(ICollectable))
+                (obj as ICollectable).Collect();
         }
     }
 }
