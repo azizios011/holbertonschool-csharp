@@ -196,6 +196,7 @@ public class Key : Base, ICollectable
     }
 }
 
+
 /// <summary>
 /// A class called RoomObjects.
 /// </summary>
