@@ -111,6 +111,7 @@ public class Decoration : Base, IInteractive, IBreakable
             throw new Exception("Durability must be greater than 0");
         }
 
+        /// 
         this.name = name;
         this.durability = durability;
         this.isQuestItem = isQuestItem;
@@ -121,17 +122,17 @@ public class Decoration : Base, IInteractive, IBreakable
     /// </summary>
     public void Interact()
     {
-        /// if the durability is 0 or less, print.
+
         if (durability <= 0)
         {
             Console.WriteLine($"The {name} has been broken.");
         }
-        /// otherwise, if isQuestItem is true, print.
+
         else if (isQuestItem)
         {
             Console.WriteLine($"You look at the {name}. There's a key inside.");
         }
-        /// if isQuestItem is false, write.
+
         else
         {
             Console.WriteLine($"You look at the {name}. Not much to see here.");
@@ -144,17 +145,17 @@ public class Decoration : Base, IInteractive, IBreakable
     public void Break()
     {
         durability--;
-        /// if durability is greater than 0, print.
+
         if (durability > 0)
         {
             Console.WriteLine($"You hit the {name}. It cracks.");
         }
-        /// if durability is 0, print.
+
         else if (durability == 0)
         {
             Console.WriteLine($"You smash the {name}. What a mess.");
         }
-        /// if durability is less than 0, print.
+
         else
         {
             Console.WriteLine($"The {name} is already broken.");
