@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = MyMath.Tests
+build_property.ProjectDir = C:\Users\azizh\Source\Repos\azizios011\holbertonschool-csharp\csharp-tdd\0-add\MyMath.Tests\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
