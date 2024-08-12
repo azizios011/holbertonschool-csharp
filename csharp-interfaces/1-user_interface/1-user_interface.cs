@@ -67,23 +67,39 @@ public interface ICollectable
 /// </summary>
 public class TestObject : Base, IInteractive, IBreakable, ICollectable
 {
+
+    /// <summary>
+    /// Property from IBreakable interface.
+    /// </summary>
     public int durability { get; set; }
 
+    /// <summary>
+    /// Property from ICollectable interface.
+    /// </summary>
     public bool isCollected { get; set; }
-    
+
+    /// <summary>
+    /// Method from IInteractive interface.
+    /// </summary>
     public void Interact()
     {
-
+        // Method implementation can be left empty
     }
 
+    /// <summary>
+    /// Method from IBreakable interface.
+    /// </summary>
     public void Break()
     {
-
+        // Method implementation can be left empty
     }
 
+    /// <summary>
+    /// Method from ICollectable interface.
+    /// </summary>
     public void Collect()
     {
-
+        // Method implementation can be left empty
     }
 
 }
