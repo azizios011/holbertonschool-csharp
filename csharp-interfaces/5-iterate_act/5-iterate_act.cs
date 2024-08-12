@@ -204,8 +204,6 @@ public class RoomObjects
     /// <summary>
     /// A method called IterateAction. This method should take a list of all objects.
     /// </summary>
-    /// <param name="roomObjects"></param>
-    /// <param name="type"></param>
     public static void IterateAction(List<Base> roomObjects, Type type)
     {
         foreach (Base obj in roomObjects)
