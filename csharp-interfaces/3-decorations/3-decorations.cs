@@ -107,11 +107,8 @@ public class Decoration : Base, IInteractive, IBreakable
     {
         if (durability <= 0)
         {
-            /// the method declaration should use name, durability, and isQuestItem as the parameter names.
             throw new Exception("Durability must be greater than 0");
         }
-
-        /// 
         this.name = name;
         this.durability = durability;
         this.isQuestItem = isQuestItem;
