@@ -8,17 +8,17 @@ public class Player
     /// <summary>
     /// A Properties 'name' string.
     /// </summary>
-    private string name;
+    string name;
 
     /// <summary>
     /// A Properties 'maxHp' float.
     /// </summary>
-    private float maxHp;
+    float maxHp;
 
     /// <summary>
     /// A Properties 'hp' float.
     /// </summary>
-    private float hp;
+    float hp;
 
     /// <summary>
     /// A Constructor.
