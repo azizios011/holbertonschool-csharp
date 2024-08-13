@@ -1,9 +1,23 @@
 ﻿using System;
 
+/// <summary>
+/// A class called 'Player' with the following.
+/// </summary>
 public class Player
 {
+    /// <summary>
+    /// A Properties 'name' string.
+    /// </summary>
     private string name;
+
+    /// <summary>
+    /// A Properties 'maxHp' float.
+    /// </summary>
     private float maxHp;
+
+    /// <summary>
+    /// A Properties 'hp' float.
+    /// </summary>
     private float hp;
 
     /// <summary>
