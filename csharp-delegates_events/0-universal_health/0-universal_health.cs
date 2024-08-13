@@ -6,17 +6,17 @@
 public class Player
 {
     /// <summary>
-    /// A Propertie 'name' string.
+    /// A Properties 'name' string.
     /// </summary>
     private string name;
 
     /// <summary>
-    /// A Propertie 'maxHp' float.
+    /// A Properties 'maxHp' float.
     /// </summary>
     private float maxHp;
 
     /// <summary>
-    /// A Propertie 'hp' float.
+    /// A Properties 'hp' float.
     /// </summary>
     private float hp;
 
